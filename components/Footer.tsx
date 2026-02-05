@@ -117,8 +117,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-dark-light pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} FCY HOMES Limited. All rights reserved.</p>
+        <div className="border-t border-dark-light pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p className="text-gray-400">
+              &copy; {new Date().getFullYear()} FCY HOMES Limited. All rights reserved.
+            </p>
+            <div className="flex items-center gap-2 text-gray-400">
+              <span>Developed by</span>
+              <a 
+                href="https://bittech.co.nz" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-light transition-colors font-bold"
+              >
+                BitTech
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
