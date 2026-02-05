@@ -103,15 +103,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-gray-300">
                 <MapPin className="text-primary flex-shrink-0 mt-0.5" size={18} />
-                <span>52 Omahu Road, Greenlane<br />Auckland, 1051, New Zealand</span>
+                <span>52 Omahu Road<br />Greenlane, Auckland 1051<br />New Zealand</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-300">
+              <li className="flex items-center gap-3 text-sm">
                 <Phone className="text-primary flex-shrink-0" size={18} />
-                <span>021 490 668</span>
+                <a href="tel:021490668" className="text-gray-300 hover:text-primary transition-colors">
+                  021 490 668
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-300">
+              <li className="flex items-center gap-3 text-sm">
                 <Mail className="text-primary flex-shrink-0" size={18} />
-                <span>fcyhomes@gmail.com</span>
+                <a href="mailto:fcyhomes@gmail.com" className="text-gray-300 hover:text-primary transition-colors">
+                  fcyhomes@gmail.com
+                </a>
               </li>
             </ul>
           </div>
