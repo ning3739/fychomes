@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, Mail, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,27 +30,14 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-50 bg-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10 sm:h-12">
-            {/* Left: Phone & Email */}
-            <div className="flex items-center gap-3 sm:gap-6">
-              <a href="tel:021490668" className="flex items-center gap-1.5 sm:gap-2 hover:text-primary transition-colors text-xs sm:text-sm font-medium">
-                <Phone size={14} className="sm:w-4 sm:h-4" />
-                <span>021 490 668</span>
-              </a>
-              <a href="mailto:fcyhomes@gmail.com" className="hidden sm:flex items-center gap-2 hover:text-primary transition-colors text-sm font-medium">
-                <Mail size={16} />
-                <span>fcyhomes@gmail.com</span>
-              </a>
-            </div>
-            
-            {/* Right: Address */}
-            <div className="hidden lg:flex items-center gap-2 text-sm font-medium">
-              <MapPin size={16} />
-              <span>52 Omahu Road, Greenlane, Auckland, 1051, NZ</span>
-            </div>
-            
-            {/* Mobile: Email Icon Only */}
-            <a href="mailto:fcyhomes@gmail.com" className="sm:hidden flex items-center hover:text-primary transition-colors">
-              <Mail size={16} />
+            <a href="tel:021490668" className="flex items-center gap-1.5 sm:gap-2 hover:text-primary transition-colors text-xs sm:text-sm font-medium">
+              <Phone size={14} className="sm:w-4 sm:h-4" />
+              <span>021 490 668</span>
+            </a>
+            <a href="mailto:fcyhomes@gmail.com" className="flex items-center gap-1.5 sm:gap-2 hover:text-primary transition-colors text-xs sm:text-sm font-medium">
+              <Mail size={14} className="sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">fcyhomes@gmail.com</span>
+              <span className="sm:hidden">Email</span>
             </a>
           </div>
         </div>
@@ -64,7 +51,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center group">
             <div className="relative h-12 w-48 transition-transform group-hover:scale-105">
               <Image
-                src="/fcy-homes-logo.jpg"
+                src="/fcy-homes-logo.png"
                 alt="FCY HOMES"
                 fill
                 className="object-contain object-left"

@@ -11,21 +11,21 @@ export default function ServicesPage() {
       title: 'Design & Build',
       description: 'From initial concept to final construction, we provide seamless design and building services. Our integrated approach ensures that your vision is realized with precision, keeping budget and timeline in check.',
       features: ['Architectural Design', 'Council Consent Management', 'Cost Estimation', 'End-to-End Project Management'],
-      image: 'https://images.unsplash.com/photo-1721132537184-5494c01ed87f?w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1762146828422-50a8bd416d3c?w=1200&q=80',
     },
     {
       id: 'construction',
       title: 'House Construction',
       description: 'High-quality new home construction tailored to your requirements. We use premium materials and trusted techniques to build homes that stand the test of time and provide comfort for generations.',
       features: ['New Home Builds', 'Sustainable Construction', 'Quality Assurance', 'Professional Guarantee'],
-      image: 'https://images.unsplash.com/photo-1762813384339-c526d5533976?w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1676803210608-39cdef6a505c?w=1200&q=80',
     },
     {
       id: 'subdivision',
       title: 'Subdivision',
       description: 'Professional planning and execution of land subdivision projects. We maximize the potential of your land through smart design, infrastructure development, and efficient project execution.',
       features: ['Feasibility Studies', 'Resource Consents', 'Infrastructure Development', 'Landscaping'],
-      image: 'https://images.unsplash.com/photo-1650222360656-8a3061cb004f?w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1760129745103-91c4022ed5fb?w=1200&q=80',
     },
   ];
 
@@ -35,7 +35,7 @@ export default function ServicesPage() {
       <section className="relative bg-gradient-to-b from-gray-50 to-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80" 
+            src="https://images.unsplash.com/photo-1605174191298-3febad4cef05?w=1920&q=80" 
             alt="Services Background" 
             className="w-full h-full object-cover"
           />

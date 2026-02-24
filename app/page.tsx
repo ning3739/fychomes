@@ -59,7 +59,7 @@ export default function HomePage() {
       <section className="relative h-[85vh] min-h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1649001241420-cbd5641d4951?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920" 
+            src="https://images.unsplash.com/photo-1766603636700-e9d80473f40f?w=1920&q=80" 
             alt="Modern Home" 
             className="w-full h-full object-cover"
           />
@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1541888915364-aaeed51d238b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" 
+                src="https://images.unsplash.com/photo-1674558064172-7b6119ebbc41?w=1080&q=80" 
                 alt="Construction Team" 
                 className="rounded-sm w-full h-[380px] object-cover"
               />
@@ -162,7 +162,7 @@ export default function HomePage() {
               },
               { 
                 icon: <Home size={28} />, 
-                title: 'House Construction', 
+                title: 'Residential Construction', 
                 desc: 'Building new homes with quality and efficiency tailored to you.' 
               },
               { 
@@ -207,19 +207,22 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Modern Family Home',
+                title: 'Stand Alone House',
                 type: 'New Build',
-                image: 'https://images.unsplash.com/photo-1767950470198-c9cd97f8ed87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
+                slug: 'stand_alone_house',
+                image: '/stand_alone_house/1.webp'
               },
               {
-                title: 'Luxury Subdivision',
-                type: 'Subdivision',
-                image: 'https://images.unsplash.com/photo-1650222360656-8a3061cb004f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
+                title: 'Terrace House',
+                type: 'Residential',
+                slug: 'terrace_house',
+                image: '/terrace_house/1.webp'
               },
               {
-                title: 'Contemporary Renovation',
-                type: 'Renovation',
-                image: 'https://images.unsplash.com/photo-1758998202918-d921125a700f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'
+                title: 'Subdivision',
+                type: 'Development',
+                slug: 'subdivision',
+                image: '/subdivision/1.webp'
               }
             ].map((project, idx) => (
               <motion.div
@@ -230,7 +233,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
                 <Link
-                  href="/projects"
+                  href={`/projects/${project.slug}`}
                   className="group relative overflow-hidden rounded-sm shadow-lg aspect-[4/3] cursor-pointer block"
                 >
                   <img 
@@ -325,7 +328,7 @@ export default function HomePage() {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" 
+            src="https://images.unsplash.com/photo-1605174191298-3febad4cef05?w=1920&q=80" 
             alt="Construction Background" 
             className="w-full h-full object-cover"
           />
