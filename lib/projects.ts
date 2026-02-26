@@ -3,7 +3,7 @@ import path from 'path';
 
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 
-const FEATURED_ONLY = new Set(['Stand_Alone_House', 'Terrace_House', 'Subdivision']);
+const FEATURED_ONLY = new Set(['stand_alone_house', 'terrace_house', 'subdivision']);
 
 function toTitleCase(str: string): string {
   return str.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -60,5 +60,15 @@ export function getProjectBySlug(slug: string) {
 }
 
 export function getAllProjectSlugs(): string[] {
-  return getProjects().map(p => p.slug);
+  const publicDir = path.join(process.cwd(), 'public');
+  const entries = fs.readdirSync(publicDir, { withFileTypes: true });
+
+  return entries
+    .filter(entry => {
+      if (!entry.isDirectory()) return false;
+      const images = fs.readdirSync(path.join(publicDir, entry.name))
+        .filter(file => SUPPORTED_EXTENSIONS.has(path.extname(file).toLowerCase()));
+      return images.length > 0;
+    })
+    .map(entry => entry.name);
 }
