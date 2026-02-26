@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1674558064172-7b6119ebbc41?w=1080&q=80" 
+                src="https://images.unsplash.com/photo-1541888915364-aaeed51d238b?w=1080&q=80" 
                 alt="Construction Team" 
                 className="rounded-sm w-full h-[380px] object-cover"
               />
