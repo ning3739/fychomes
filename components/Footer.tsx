@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
@@ -9,15 +8,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="col-span-1">
-            <div className="relative h-12 w-40 mb-4">
-              <Image
-                src="/fcy-homes-logo.png"
-                alt="FCY HOMES"
-                fill
-                className="object-contain object-left"
-                unoptimized
-              />
-            </div>
+            <Link href="/" className="text-2xl font-bold text-primary mb-4 block">
+              FCY Homes
+            </Link>
             <p className="text-sm text-gray-300 mb-6 leading-relaxed font-semibold">
               Professional residential construction, design & build, and subdivision services in New Zealand.
             </p>

@@ -209,20 +209,20 @@ export default function HomePage() {
               {
                 title: 'Stand Alone House',
                 type: 'New Build',
-                slug: 'stand_alone_house',
-                image: '/stand_alone_house/1.webp'
+                slug: 'Stand_Alone_House',
+                image: '/Stand_Alone_House/1.jpg'
               },
               {
                 title: 'Terrace House',
                 type: 'Residential',
-                slug: 'terrace_house',
-                image: '/terrace_house/1.webp'
+                slug: 'Terrace_House',
+                image: '/Terrace_House/1.avif'
               },
               {
                 title: 'Subdivision',
                 type: 'Development',
-                slug: 'subdivision',
-                image: '/subdivision/1.webp'
+                slug: 'Subdivision',
+                image: '/Subdivision/1.webp'
               }
             ].map((project, idx) => (
               <motion.div

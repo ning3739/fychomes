@@ -3,7 +3,7 @@ import path from 'path';
 
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 
-const FEATURED_ONLY = new Set(['stand_alone_house', 'terrace_house', 'subdivision']);
+const FEATURED_ONLY = new Set(['Stand_Alone_House', 'Terrace_House', 'Subdivision']);
 
 function toTitleCase(str: string): string {
   return str.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
