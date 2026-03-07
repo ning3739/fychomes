@@ -9,7 +9,7 @@ export default function ContactPage() {
       <section className="relative bg-linear-to-b from-gray-50 to-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80"
+            src="/images/contact-hero.jpg"
             alt="Contact Background"
             className="w-full h-full object-cover"
           />
@@ -67,7 +67,7 @@ export default function ContactPage() {
 
             <div>
               <img
-                src="https://images.unsplash.com/photo-1541888915364-aaeed51d238b?w=1080&q=80"
+                src="/images/about-team.jpg"
                 alt="FCY HOMES Team"
                 className="rounded-sm w-full h-[420px] object-cover shadow-xl"
               />

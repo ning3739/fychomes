@@ -59,25 +59,25 @@ export default function HomePage() {
       <section className="relative h-[85vh] min-h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1766603636700-e9d80473f40f?w=1920&q=80" 
+            src="/home.png" 
             alt="Modern Home" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-white drop-shadow-lg">
               Building Your Dream Home
             </h1>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-0.5 w-12 bg-primary"></div>
-              <p className="text-lg md:text-xl text-primary font-semibold">
+              <p className="text-lg md:text-2xl text-primary font-bold drop-shadow-md">
                 Quality, Trust, Efficiency
               </p>
             </div>
-            <p className="text-base md:text-lg mb-8 text-gray-100 leading-relaxed">
+            <p className="text-base md:text-lg mb-8 text-white leading-relaxed drop-shadow-md">
               We specialize in residential construction, design, build, and subdivision projects. 
               Delivering quality and reliability with professional excellence in every project.
             </p>
@@ -107,7 +107,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1541888915364-aaeed51d238b?w=1080&q=80" 
+                src="/images/about-team.jpg" 
                 alt="Construction Team" 
                 className="rounded-sm w-full h-[380px] object-cover"
               />
@@ -276,21 +276,21 @@ export default function HomePage() {
                 project: 'Modern Family Home',
                 rating: 5,
                 text: 'FCY Homes exceeded our expectations. Their attention to detail and professionalism made our dream home a reality. Highly recommended!',
-                avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces'
+                avatar: '/images/avatar-john.jpg'
               },
               {
                 name: 'Sarah Johnson',
                 project: 'Subdivision Project',
                 rating: 5,
                 text: 'Outstanding service from start to finish. The team was responsive, professional, and delivered on time. We couldn\'t be happier!',
-                avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces'
+                avatar: '/images/avatar-sarah.jpg'
               },
               {
                 name: 'Michael Chen',
                 project: 'House Renovation',
                 rating: 5,
                 text: 'Quality workmanship and excellent project management. FCY Homes transformed our old house into a modern masterpiece.',
-                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces'
+                avatar: '/images/avatar-michael.jpg'
               }
             ].map((testimonial, idx) => (
               <motion.div
@@ -328,7 +328,7 @@ export default function HomePage() {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1605174191298-3febad4cef05?w=1920&q=80" 
+            src="/images/cta-bg.jpg" 
             alt="Construction Background" 
             className="w-full h-full object-cover"
           />

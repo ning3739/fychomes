@@ -4,6 +4,7 @@ import path from 'path';
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 
 const FEATURED_ONLY = new Set(['stand_alone_house', 'terrace_house', 'subdivision']);
+const EXCLUDED_DIRS = new Set(['images']);
 
 function toTitleCase(str: string): string {
   return str.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -29,7 +30,7 @@ export function getProjects(): Project[] {
   const entries = fs.readdirSync(publicDir, { withFileTypes: true });
 
   return entries
-    .filter(entry => entry.isDirectory() && !FEATURED_ONLY.has(entry.name))
+    .filter(entry => entry.isDirectory() && !FEATURED_ONLY.has(entry.name) && !EXCLUDED_DIRS.has(entry.name))
     .map(entry => {
       const images = getImageFiles(path.join(publicDir, entry.name), entry.name);
       return {
@@ -65,7 +66,7 @@ export function getAllProjectSlugs(): string[] {
 
   return entries
     .filter(entry => {
-      if (!entry.isDirectory()) return false;
+      if (!entry.isDirectory() || EXCLUDED_DIRS.has(entry.name)) return false;
       const images = fs.readdirSync(path.join(publicDir, entry.name))
         .filter(file => SUPPORTED_EXTENSIONS.has(path.extname(file).toLowerCase()));
       return images.length > 0;

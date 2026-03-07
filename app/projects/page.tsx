@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <section className="relative bg-linear-to-b from-gray-50 to-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+            src="/images/projects-hero.jpg"
             alt="Projects Background"
             className="w-full h-full object-cover"
           />

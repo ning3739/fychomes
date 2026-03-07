@@ -93,12 +93,12 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-gray-400">
               <span>Developed by</span>
               <a 
-                href="https://bittech.co.nz" 
+                href="https://bytetech.co.nz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary-light transition-colors font-bold"
               >
-                BitTech
+                ByteTech
               </a>
             </div>
           </div>
