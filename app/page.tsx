@@ -80,8 +80,8 @@ export default function HomePage() {
               Building Your Dream Home
             </h1>
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-0.5 w-12 bg-primary shrink-0"></div>
-              <p className="text-lg md:text-2xl text-primary font-bold drop-shadow-md">
+              <div className="h-0.5 w-12 bg-primary-light shrink-0"></div>
+              <p className="text-lg md:text-2xl text-primary-light font-bold drop-shadow-md">
                 Quality, Trust, Efficiency
               </p>
             </div>
