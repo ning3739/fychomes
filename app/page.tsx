@@ -1,51 +1,52 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowRight, CheckCircle, Home, PenTool, Layers } from 'lucide-react';
-import { motion } from 'motion/react';
+import Link from "next/link";
+import { ArrowRight, CheckCircle, Home, PenTool, Layers } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function HomePage() {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'GeneralContractor',
-    name: 'FCY HOMES Limited',
-    image: 'https://fcyhomes.co.nz/fcy-homes-logo.jpg',
-    '@id': 'https://fcyhomes.co.nz',
-    url: 'https://fcyhomes.co.nz',
-    telephone: '021490668',
-    email: 'fcyhomes@gmail.com',
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    name: "FCY HOMES Limited",
+    image: "https://fcyhomes.co.nz/fcy-homes-logo.jpg",
+    "@id": "https://fcyhomes.co.nz",
+    url: "https://fcyhomes.co.nz",
+    telephone: "021490668",
+    email: "fcyhomes@gmail.com",
     address: {
-      '@type': 'PostalAddress',
-      streetAddress: '52 Omahu Road, Greenlane',
-      addressLocality: 'Auckland',
-      postalCode: '1051',
-      addressCountry: 'NZ',
+      "@type": "PostalAddress",
+      streetAddress: "52 Omahu Road, Greenlane",
+      addressLocality: "Auckland",
+      postalCode: "1051",
+      addressCountry: "NZ",
     },
     geo: {
-      '@type': 'GeoCoordinates',
+      "@type": "GeoCoordinates",
       latitude: -36.8915,
       longitude: 174.7982,
     },
     areaServed: {
-      '@type': 'City',
-      name: 'Auckland',
+      "@type": "City",
+      name: "Auckland",
     },
-    priceRange: '$$',
+    priceRange: "$$",
     openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '17:00',
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "17:00",
     },
     sameAs: [
-      'https://www.facebook.com/fcyhomes',
-      'https://www.instagram.com/fcyhomes',
+      "https://www.facebook.com/fcyhomes",
+      "https://www.instagram.com/fcyhomes",
     ],
-    description: 'Professional residential construction, design & build, and subdivision services in Auckland, New Zealand.',
+    description:
+      "Professional residential construction, design & build, and subdivision services in Auckland, New Zealand.",
     aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '150',
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "150",
     },
   };
 
@@ -58,12 +59,18 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-[85vh] min-h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/home.png" 
-            alt="Modern Home" 
+          <img
+            src="/home.png"
+            alt="Modern Home"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
+          {/* 从左到右渐进模糊，左侧清晰、右侧柔焦 */}
+          <div
+            className="absolute inset-0 backdrop-blur-[2px] md:backdrop-blur-[3px] pointer-events-none [mask-image:linear-gradient(to_right,transparent_0%,black_70%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_70%)] [mask-size:100%_100%] [-webkit-mask-size:100%_100%]"
+            aria-hidden
+          />
+          {/* 整体稍亮；左侧文字区稍深，向右自然过渡 */}
+          <div className="absolute inset-0 bg-linear-to-r from-black/45 via-black/30 to-black/18"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,14 +79,15 @@ export default function HomePage() {
               Building Your Dream Home
             </h1>
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-0.5 w-12 bg-primary"></div>
+              <div className="h-0.5 w-12 bg-primary shrink-0"></div>
               <p className="text-lg md:text-2xl text-primary font-bold drop-shadow-md">
                 Quality, Trust, Efficiency
               </p>
             </div>
             <p className="text-base md:text-lg mb-8 text-white leading-relaxed drop-shadow-md">
-              We specialize in residential construction, design, build, and subdivision projects. 
-              Delivering quality and reliability with professional excellence in every project.
+              We specialize in residential construction, design, build, and
+              subdivision projects. Delivering quality and reliability with
+              professional excellence in every project.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
@@ -106,30 +114,45 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <img 
-                src="/images/about-team.jpg" 
-                alt="Construction Team" 
+              <img
+                src="/images/about-team.jpg"
+                alt="Construction Team"
                 className="rounded-sm w-full h-[380px] object-cover"
               />
             </div>
             <div>
-              <p className="text-primary font-semibold uppercase tracking-wide mb-2 text-xs">About Us</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">Experience You Can Build On</h2>
+              <p className="text-primary font-semibold uppercase tracking-wide mb-2 text-xs">
+                About Us
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+                Experience You Can Build On
+              </h2>
               <p className="text-gray-700 mb-5 leading-relaxed">
-                With years of experience in residential construction, our team ensures high-quality workmanship and professional service. 
-                We deliver trust and credibility for every project with attention to detail and excellence.
+                With years of experience in residential construction, our team
+                ensures high-quality workmanship and professional service. We
+                deliver trust and credibility for every project with attention
+                to detail and excellence.
               </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-2.5 text-dark">
-                  <CheckCircle className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                  <CheckCircle
+                    className="text-primary flex-shrink-0 mt-0.5"
+                    size={18}
+                  />
                   <span>Professional Excellence, Quality</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-dark">
-                  <CheckCircle className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                  <CheckCircle
+                    className="text-primary flex-shrink-0 mt-0.5"
+                    size={18}
+                  />
                   <span>High-Quality Workmanship</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-dark">
-                  <CheckCircle className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                  <CheckCircle
+                    className="text-primary flex-shrink-0 mt-0.5"
+                    size={18}
+                  />
                   <span>Comprehensive Project Management</span>
                 </li>
               </ul>
@@ -137,7 +160,7 @@ export default function HomePage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 text-dark font-semibold hover:text-primary transition-colors"
               >
-                Learn More About Us 
+                Learn More About Us
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -149,26 +172,30 @@ export default function HomePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <p className="text-primary font-semibold uppercase tracking-wide mb-2 text-xs">Our Services</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark">Comprehensive Construction Solutions</h2>
+            <p className="text-primary font-semibold uppercase tracking-wide mb-2 text-xs">
+              Our Services
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark">
+              Comprehensive Construction Solutions
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { 
-                icon: <PenTool size={28} />, 
-                title: 'Design, Build', 
-                desc: 'Full design and construction services from concept to completion.' 
+              {
+                icon: <PenTool size={28} />,
+                title: "Design, Build",
+                desc: "Full design and construction services from concept to completion.",
               },
-              { 
-                icon: <Home size={28} />, 
-                title: 'Residential Construction', 
-                desc: 'Building new homes with quality and efficiency tailored to you.' 
+              {
+                icon: <Home size={28} />,
+                title: "Residential Construction",
+                desc: "Building new homes with quality and efficiency tailored to you.",
               },
-              { 
-                icon: <Layers size={28} />, 
-                title: 'Subdivision', 
-                desc: 'Expert planning and construction for land subdivision projects.' 
+              {
+                icon: <Layers size={28} />,
+                title: "Subdivision",
+                desc: "Expert planning and construction for land subdivision projects.",
               },
             ].map((service, idx) => (
               <Link
@@ -179,8 +206,12 @@ export default function HomePage() {
                 <div className="w-14 h-14 bg-gray-100 text-dark rounded-sm flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+                <h3 className="text-xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.desc}
+                </p>
               </Link>
             ))}
           </div>
@@ -192,38 +223,45 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h4 className="text-primary font-bold uppercase tracking-wider mb-2 text-sm">Our Portfolio</h4>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark">Featured Projects</h2>
+              <h4 className="text-primary font-bold uppercase tracking-wider mb-2 text-sm">
+                Our Portfolio
+              </h4>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark">
+                Featured Projects
+              </h2>
             </div>
             <Link
               href="/projects"
               className="hidden md:flex items-center gap-2 text-dark font-bold hover:text-primary transition-colors group"
             >
-              View All Projects 
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              View All Projects
+              <ArrowRight
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Stand Alone House',
-                type: 'New Build',
-                slug: 'stand_alone_house',
-                image: '/stand_alone_house/1.jpg'
+                title: "Stand Alone House",
+                type: "New Build",
+                slug: "stand_alone_house",
+                image: "/stand_alone_house/1.jpg",
               },
               {
-                title: 'Terrace House',
-                type: 'Residential',
-                slug: 'terrace_house',
-                image: '/terrace_house/1.avif'
+                title: "Terrace House",
+                type: "Residential",
+                slug: "terrace_house",
+                image: "/terrace_house/1.avif",
               },
               {
-                title: 'Subdivision',
-                type: 'Development',
-                slug: 'subdivision',
-                image: '/subdivision/1.webp'
-              }
+                title: "Subdivision",
+                type: "Development",
+                slug: "subdivision",
+                image: "/subdivision/1.webp",
+              },
             ].map((project, idx) => (
               <motion.div
                 key={idx}
@@ -236,20 +274,24 @@ export default function HomePage() {
                   href={`/projects/${project.slug}`}
                   className="group relative overflow-hidden rounded-sm shadow-lg aspect-[4/3] cursor-pointer block"
                 >
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
+                  <img
+                    src={project.image}
+                    alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity flex flex-col justify-end p-6">
-                    <span className="text-primary text-sm font-bold uppercase mb-1">{project.type}</span>
-                    <h3 className="text-white text-xl font-bold">{project.title}</h3>
+                    <span className="text-primary text-sm font-bold uppercase mb-1">
+                      {project.type}
+                    </span>
+                    <h3 className="text-white text-xl font-bold">
+                      {project.title}
+                    </h3>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </div>
-          
+
           <div className="mt-8 text-center md:hidden">
             <Link
               href="/projects"
@@ -265,33 +307,37 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h4 className="text-primary font-bold uppercase tracking-wider mb-2 text-sm">Testimonials</h4>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark">What Our Clients Say</h2>
+            <h4 className="text-primary font-bold uppercase tracking-wider mb-2 text-sm">
+              Testimonials
+            </h4>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark">
+              What Our Clients Say
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'John Smith',
-                project: 'Modern Family Home',
+                name: "John Smith",
+                project: "Modern Family Home",
                 rating: 5,
-                text: 'FCY Homes exceeded our expectations. Their attention to detail and professionalism made our dream home a reality. Highly recommended!',
-                avatar: '/images/avatar-john.jpg'
+                text: "FCY Homes exceeded our expectations. Their attention to detail and professionalism made our dream home a reality. Highly recommended!",
+                avatar: "/images/avatar-john.jpg",
               },
               {
-                name: 'Sarah Johnson',
-                project: 'Subdivision Project',
+                name: "Sarah Johnson",
+                project: "Subdivision Project",
                 rating: 5,
-                text: 'Outstanding service from start to finish. The team was responsive, professional, and delivered on time. We couldn\'t be happier!',
-                avatar: '/images/avatar-sarah.jpg'
+                text: "Outstanding service from start to finish. The team was responsive, professional, and delivered on time. We couldn't be happier!",
+                avatar: "/images/avatar-sarah.jpg",
               },
               {
-                name: 'Michael Chen',
-                project: 'House Renovation',
+                name: "Michael Chen",
+                project: "House Renovation",
                 rating: 5,
-                text: 'Quality workmanship and excellent project management. FCY Homes transformed our old house into a modern masterpiece.',
-                avatar: '/images/avatar-michael.jpg'
-              }
+                text: "Quality workmanship and excellent project management. FCY Homes transformed our old house into a modern masterpiece.",
+                avatar: "/images/avatar-michael.jpg",
+              },
             ].map((testimonial, idx) => (
               <motion.div
                 key={idx}
@@ -303,19 +349,27 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">★</span>
+                    <span key={i} className="text-primary text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
                 <div className="flex items-center gap-3">
-                  <img 
-                    src={testimonial.avatar} 
+                  <img
+                    src={testimonial.avatar}
                     alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/20"
                   />
                   <div>
-                    <div className="font-bold text-dark">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600 font-medium">{testimonial.project}</div>
+                    <div className="font-bold text-dark">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">
+                      {testimonial.project}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -327,17 +381,20 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/cta-bg.jpg" 
-            alt="Construction Background" 
+          <img
+            src="/images/cta-bg.jpg"
+            alt="Construction Background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/85 to-dark/80"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Build Your Dream?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Ready to Build Your Dream?
+          </h2>
           <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation and let's bring your vision to life.
+            Contact us today for a consultation and let's bring your vision to
+            life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -345,14 +402,20 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-sm font-bold text-lg shadow-2xl transition-all group"
             >
               Get a Free Quote
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-dark px-8 py-4 rounded-sm font-bold text-lg shadow-2xl transition-all group"
             >
               View Our Work
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
             </Link>
           </div>
         </div>
