@@ -64,13 +64,14 @@ export default function HomePage() {
             alt="Modern Home"
             className="w-full h-full object-cover"
           />
-          {/* 从左到右渐进模糊，左侧清晰、右侧柔焦 */}
+          {/* 仅文字区域略暗，径向向四周渐变过渡，无框无硬边 */}
           <div
-            className="absolute inset-0 backdrop-blur-[2px] md:backdrop-blur-[3px] pointer-events-none [mask-image:linear-gradient(to_right,transparent_0%,black_70%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_70%)] [mask-size:100%_100%] [-webkit-mask-size:100%_100%]"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 90% 95% at 50% 50%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 45%, transparent 78%)',
+            }}
             aria-hidden
           />
-          {/* 整体稍亮；左侧文字区稍深，向右自然过渡 */}
-          <div className="absolute inset-0 bg-linear-to-r from-black/45 via-black/30 to-black/18"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
